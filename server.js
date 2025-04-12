@@ -3,14 +3,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+
 const bodyParser = require('body-parser');
 const patientsRouter = require('./routes/patients');
 const doctorsRouter = require('./routes/doctors');
-const appoinmentsRouter = require('./routes/appointments')
+const appointmentsRouter = require('./routes/appointments')
 const app = express();
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 app.use(cors());
+app.use(express.json());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
@@ -27,7 +30,7 @@ connection.once('open', () => {
 
 app.use('/patients', patientsRouter);
 app.use('/doctors', doctorsRouter);
-app.use('/appointments', appoinmentsRouter)
+app.use('/appointments', appointmentsRouter)
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

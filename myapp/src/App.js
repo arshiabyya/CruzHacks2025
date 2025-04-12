@@ -45,7 +45,7 @@ const App = () => {
         <Router>
             <div className="container">
                 <h1 style={{ color: "green" }}>
-                    GFG- Hospital Managment App
+                    SlugClubHub
                 </h1>
                 <nav>
                     <ul>
