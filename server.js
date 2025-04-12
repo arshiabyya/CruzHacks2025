@@ -6,7 +6,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const patientsRouter = require('./routes/patients');
 const doctorsRouter = require('./routes/doctors');
-const appoinmentsRouter = require('./routes/appointments')
+const appointmentsRouter = require('./routes/appointments')
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -27,7 +27,7 @@ connection.once('open', () => {
 
 app.use('/patients', patientsRouter);
 app.use('/doctors', doctorsRouter);
-app.use('/appointments', appoinmentsRouter)
+app.use('/appointments', appointmentsRouter)
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
