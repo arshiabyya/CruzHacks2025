@@ -53,20 +53,20 @@ const App = () => {
                             isLinkActive('/appointments')
                                 ? 'active' : ''}>
                             <Link to="/appointments">
-                                Appointments</Link>
+                                Add an Event</Link>
                         </li>
                         <li className={
                             isLinkActive('/doctors') ?
                                 'active' : ''}>
                             <Link to="/doctors">
-                                Doctors
+                                Search
                             </Link>
                         </li>
                         <li className={
                             isLinkActive('/patients') ?
                                 'active' : ''}>
                             <Link to="/patients">
-                                Patients
+                                View Clubs
                             </Link>
                         </li>
                     </ul>
