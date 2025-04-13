@@ -69,4 +69,27 @@ router.route('/delete/:id').delete((req, res) => {
             .json('Error: ' + err));
 });
 
+
+//search engine for doctor data
+//const express = require('express');
+//const Doctor = require('../models/Doctor');
+
+// Search doctors by query
+router.get('/search', async (req, res) => {
+  const { keyword } = req.query;
+  const regex = new RegExp(keyword, 'i'); // i = case-insensitive
+
+  try {
+    const results = await Doctor.find({
+      $or: [
+        { name: { $regex: regex } },
+        { specialty: { $regex: regex } }
+      ]
+    });
+    res.json(results);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = router;

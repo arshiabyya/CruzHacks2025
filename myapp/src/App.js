@@ -87,5 +87,10 @@ const App = () => {
     );
 }
 
+//import SearchDoctors from './pages/SearchDoctors';
+
+///<Route path="/search" element={<SearchDoctors />} />
+
 export default App;
+
 
